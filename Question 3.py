@@ -112,13 +112,12 @@ elif sides == 2:
         finish = True
       else:
         check2.clear()
-  print(check1)
   if finish:
     diceStorage = numberStorage.copy()
     diceStorage[1] -= 1
     diceStorage[3] -= 1
-    print("\nDice 1: " + str(smallSolutions[diceStorage[0]][(diceStorage[1])]) + " " + str(bigSolutions[(diceStorage[2])][(diceStorage[3])]))
-    print("Dice 2: " + str(smallSolutions[numberStorage[0]][numberStorage[1]]) + " " + str(bigSolutions[numberStorage[2]][numberStorage[3]]))
+    print("\nDice 1: " + str(smallSolutions[diceStorage[0]][(diceStorage[1])]) , str(bigSolutions[(diceStorage[2])][(diceStorage[3])]))
+    print("Dice 2: " + str(smallSolutions[numberStorage[0]][numberStorage[1]]) , str(bigSolutions[numberStorage[2]][numberStorage[3]]))
   else:
     print("\nImpossible")
 
@@ -180,12 +179,13 @@ elif sides == 3:
     else:
       check2.clear()
   if finish:
-    print("\nDice 1: " + str(possibilities[x*2]))
-    print("Dice 2: " + str(possibilities[(x*2)+1]))
+    print("\nDice 1: " + str(possibilities[x*2][0]), str(possibilities[x*2][1]), str(possibilities[x*2][2]))
+    print("Dice 2: " + str(possibilities[(x*2)+1][0]), str(possibilities[(x*2)+1][1]), str(possibilities[(x*2)+1][2]))
   else:
     print("\nImpossible")
 
     
 elif sides == 4:
   pass
+  
 # i did say it was spaghetti didnt I?
