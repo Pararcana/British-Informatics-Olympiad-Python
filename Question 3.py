@@ -1,11 +1,11 @@
-#work in progress, only works for dice with up to 3 sides
+#work in progress, only works for dice with up to 4 sides
 sides = int(input("Number of sides: "))
 if sides < 1 or sides > 8:
   print("\nError: Number of sides on dice is either below one or above eight.\n")
   exit()
 
 
-dice1 = input("Dice 1: ")
+dice1 = input("\nDice 1: ")
 info1 = dice1.split(" ")
 if len(info1) != sides:
   print("\nError: Number of sides on dice 1 and sides specified do not match.\n")
@@ -39,7 +39,10 @@ check1 = []
 check2 = []
 numberStorage = []
 possibilities = []
-middleList = []
+middleList1 = []
+middleList2 = []
+test1 = []
+test2 = []
 
 
 for i in range(sides*2):
@@ -197,50 +200,65 @@ elif sides == 4:
     for j in range(4):
       check1.append(info1[i]+info2[j])
       check1.sort()
-  print(check1)
-  print(smallSolutions)
-  print(bigSolutions)
   for x in range(len(smallSolutions)):
     for y in range(len(bigSolutions)):
         possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
         possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
   for x in range(len(smallSolutions)):
     for y in range(len(bigSolutions)):
-        possibilities.append([smallSolutions[x][0],bigSolutions[y][1]])
+        possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
+        possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
+  for x in range(len(smallSolutions)):
+    for y in range(len(bigSolutions)):
         possibilities.append([smallSolutions[x][1],bigSolutions[y][0]])
+        possibilities.append([smallSolutions[x][0],bigSolutions[y][1]])
   for i in range(len(possibilities)):
     possibilities[i].sort()
-  for i in range(len(possibilities)):
-    evenOdd = possibilities[i][0] + possibilities[i][1]
-    if (evenOdd % 2) != 0:
-      remove.append(i)
-  remove.reverse()
-  for i in range(len(remove)):
-    possibilities.pop(remove[i])  
-  for i in range(len(possibilities)):
-    middle = possibilities[i][0] + possibilities[i][1]
-    middle = int(middle/2)
-    possibilities[i].insert(1, middle)
-  for x in range(int(len(possibilities)/2)):
-    for i in range(3):
-      for j in range(3):
-        check2.append(possibilities[x*2][i] + possibilities[(x*2)+1][j])
-        check2.sort()
-    if check1 == check2:
-      if possibilities[x*2] == info1 and possibilities[(x*2)+1] == info2: 
-        pass
-      elif possibilities[x*2] != info2 and possibilities[(x*2)+1] != info1:
-        finish = True
-        numberStorage.append(x)
-      else:
+  for i in range(int(len(possibilities)/4)):
+    x = int(possibilities[i*2][0])
+    y = int(possibilities[i*2][1])
+    z = x + y
+    for j in range(int(z/2)):
+      f = x + j
+      u = y - j
+      middleList1.append([f,u])
+    middleList1New = middleList1.copy()
+    a = int(possibilities[(i*2)+1][0])
+    b = int(possibilities[(i*2)+1][1])
+    c = a + b
+    for j in range(int(c/2)):
+      f = a + j
+      u = b - j
+      middleList2.append([f,u])
+    for j in range(len(middleList1)):
+      for k in range(len(middleList2)):
+        test1.append([possibilities[i*2][0], middleList1[j][0], middleList1[j][1], possibilities[i*2][1]])
+        test2.append([possibilities[(i*2)+1][0], middleList2[k][0], middleList2[k][1], possibilities[(i*2)+1][1]])
+        for m in range(4):
+          for n in range(4):
+            check2.append(test1[0][m] + test2[0][n])
+            check2.sort()
+        if check1 == check2:
+          if test1[0] == info1 and test2[0] == info2: 
+            pass
+          elif test1[0] != info2 and test2[0] != info1:
+            finish = True
+            numberStorage.append(test1[0])
+            numberStorage.append(test2[0])
         check2.clear()
-    else:
-      check2.clear()
+        test1.clear()
+        test2.clear()
+    middleList1.clear()
+    middleList2.clear()
   if finish:
-    x = int(numberStorage[0])
-    print("\nDice 1: " + str(possibilities[x*2][0]), str(possibilities[x*2][1]), str(possibilities[x*2][2]))
-    print("Dice 2: " + str(possibilities[(x*2)+1][0]), str(possibilities[(x*2)+1][1]), str(possibilities[(x*2)+1][2]))
+    print("\nDice 1: " + str(numberStorage[0][0]),str(numberStorage[0][1]),str(numberStorage[0][2]),str(numberStorage[0][3]))
+    print("Dice 2: " + str(numberStorage[1][0]),str(numberStorage[1][1]),str(numberStorage[1][2]),str(numberStorage[1][3]))
   else:
     print("\nImpossible")
+
+
+elif sides == 5:
+  pass
+
     
 # i did say it was spaghetti didnt I?
