@@ -1,4 +1,4 @@
-#work in progress, only works for dice with up to 4 sides
+#work in progress, only works for dice with up to 5 sides
 sides = int(input("Number of sides: "))
 if sides < 1 or sides > 8:
   print("\nError: Number of sides on dice is either below one or above eight.\n")
@@ -222,7 +222,6 @@ elif sides == 4:
       f = x + j
       u = y - j
       middleList1.append([f,u])
-    middleList1New = middleList1.copy()
     a = int(possibilities[(i*2)+1][0])
     b = int(possibilities[(i*2)+1][1])
     c = a + b
@@ -258,7 +257,87 @@ elif sides == 4:
 
 
 elif sides == 5:
-  pass
+  small = int(info1[0]) + int(info2[0])
+  big = int(info1[sides-1]) + int(info2[sides-1])
+  for i in range(int(small/2)):
+    x = i + 1
+    y = small - (i + 1)
+    smallSolutions.append([x,y])
+  for i in range(int(big/2)):
+    x = i + 1
+    y = big - (i + 1)
+    bigSolutions.append([x,y])
+  for i in range(5):
+    for j in range(5):
+      check1.append(info1[i]+info2[j])
+      check1.sort()
+  for x in range(len(smallSolutions)):
+    for y in range(len(bigSolutions)):
+        possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
+        possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
+  for x in range(len(smallSolutions)):
+    for y in range(len(bigSolutions)):
+        possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
+        possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
+  for x in range(len(smallSolutions)):
+    for y in range(len(bigSolutions)):
+        possibilities.append([smallSolutions[x][1],bigSolutions[y][0]])
+        possibilities.append([smallSolutions[x][0],bigSolutions[y][1]])
+  for i in range(len(possibilities)):
+    possibilities[i].sort()
+  for i in range(int(len(possibilities)/4)):
 
-    
+    x = int(possibilities[i*2][0])
+    y = int(possibilities[i*2][1])
+    z = x + y
+    a = int(possibilities[(i*2)+1][0])
+    b = int(possibilities[(i*2)+1][1])
+    c = a + b
+    p = (x+j) + (y-j)
+    p = p/2
+    q = (a+j) + (b-j)
+    q = q/2
+    if p.is_integer() == True and q.is_integer() == True:
+      for j in range(int(z/2)):
+        f = x + j
+        u = y - j
+        middle = f + u
+        middle = int(middle/2)
+        middleList1.append([f, middle, u])
+      for j in range(int(c/2)):
+        f = a + j
+        u = b - j
+        middle = f + u
+        middle = int(middle/2)
+        middleList2.append([f, middle, u])
+      for j in range(len(middleList1)):
+        for k in range(len(middleList2)):
+          test1.append([possibilities[i*2][0], middleList1[j][0], middleList1[j][1], middleList1[j][2], possibilities[i*2][1]])
+          test2.append([possibilities[(i*2)+1][0], middleList2[k][0], middleList2[k][1], middleList2[k][2], possibilities[(i*2)+1][1]])
+          for m in range(5):
+            for n in range(5):
+              check2.append(test1[0][m] + test2[0][n])
+              check2.sort()
+          if check1 == check2:
+            if test1[0] == info1 and test2[0] == info2: 
+              pass
+            elif test1[0] != info2 and test2[0] != info1:
+              finish = True
+              numberStorage.append(test1[0])
+              numberStorage.append(test2[0])
+          check2.clear()
+          test1.clear()
+          test2.clear()
+      middleList1.clear()
+      middleList2.clear()
+  if finish:
+    print("\nDice 1: " + str(numberStorage[0][0]),str(numberStorage[0][1]),str(numberStorage[0][2]),str(numberStorage[0][3]),str(numberStorage[0][4]))
+    print("Dice 2: " + str(numberStorage[1][0]),str(numberStorage[1][1]),str(numberStorage[1][2]),str(numberStorage[1][3]), str(numberStorage[1][4]))
+  else:
+    print("\nImpossible")
+
+
+elif sides == 6:
+  pass
+  
 # i did say it was spaghetti didnt I?
