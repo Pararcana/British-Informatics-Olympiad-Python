@@ -1,4 +1,4 @@
-#work in progress, bugfixing
+#work in progress, bugfixing & optimising
 sides = int(input("Number of sides: "))
 if sides < 1 or sides > 8:
   print("\nError: Number of sides on dice is either below one or above eight.\n")
