@@ -1,4 +1,3 @@
-#solution fully works, bugfixing & optimising. 
 #if the sides on your dice is 8, expect to wait ~15 seconds
 # for the last test, the answer it gives you is different to the answers on the markscheme, however, it is still correct
 # proof: shorturl.at/CFT14
