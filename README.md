@@ -6,7 +6,7 @@ Feel free to copy the code, just make sure to credit me (@Catatria).
 |---|---|---|
 | ✅| ✅| ➖|
 
-Question 3 progress: ~80%
+Question 3 progress: ~95%
 
 Question 1's solution is very efficient; however, Question 2's solution is less efficient and Question 3's solution is a tangled mess of spaghetti.
 The language I'm using is Python.
