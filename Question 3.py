@@ -55,6 +55,11 @@ test4 = []
 test5 = []
 test6 = []
 
+for i in range(sides*2):
+  if i < sides:
+    info1[i] = int(info1[i])
+  else:
+    info2[i-sides] = int(info2[i-sides])
 
 info1.sort()
 info2.sort()
