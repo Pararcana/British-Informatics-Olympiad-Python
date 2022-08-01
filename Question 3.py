@@ -578,18 +578,6 @@ elif sides == 8:
         possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
   for x in range(len(smallSolutions)):
     for y in range(len(bigSolutions)):
-        possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
-        possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
-  for x in range(len(smallSolutions)):
-    for y in range(len(bigSolutions)):
-        possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
-        possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
-for x in range(len(smallSolutions)):
-  for y in range(len(bigSolutions)):
-      possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
-      possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
-  for x in range(len(smallSolutions)):
-    for y in range(len(bigSolutions)):
         possibilities.append([smallSolutions[x][1],bigSolutions[y][0]])
         possibilities.append([smallSolutions[x][0],bigSolutions[y][1]])
   for i in range(len(possibilities)):
