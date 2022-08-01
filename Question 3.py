@@ -1,4 +1,8 @@
-#work in progress, bugfixing & optimising
+#solution fully works, bugfixing & optimising. 
+#if the sides on your dice is 8, expect to wait ~15 seconds
+# for the last test, the answer it gives you is different to the answers on the markscheme, however, it is still correct
+# proof: shorturl.at/CFT14
+
 sides = int(input("Number of sides: "))
 if sides < 1 or sides > 8:
   print("\nError: Number of sides on dice is either below one or above eight.\n")
@@ -28,7 +32,6 @@ for i in range(len(info1)):
 
 
 finish = False
-counter = 0
 smallSolutions = []
 bigSolutions = []
 solutions = []
@@ -53,17 +56,8 @@ test5 = []
 test6 = []
 
 
-for i in range(sides*2):
-  if i < sides:
-    counter += int(info1[i])
-    info1[i] = int(info1[i])
-  else:
-    counter += int(info2[i-sides])
-    info2[i-sides] = int(info2[i-sides])
-    
-
-info1 = sorted(info1)
-info2 = sorted(info2)
+info1.sort()
+info2.sort()
 
 
 if sides == 1:
