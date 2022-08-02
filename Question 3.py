@@ -54,11 +54,13 @@ test4 = []
 test5 = []
 test6 = []
 
+
 for i in range(sides*2):
   if i < sides:
     info1[i] = int(info1[i])
   else:
     info2[i-sides] = int(info2[i-sides])
+    
 
 info1.sort()
 info2.sort()
@@ -191,6 +193,8 @@ elif sides == 3:
     print("\nImpossible")
 
     
+
+    
 elif sides == 4:
   small = int(info1[0]) + int(info2[0])
   big = int(info1[sides-1]) + int(info2[sides-1])
@@ -214,10 +218,6 @@ elif sides == 4:
     for y in range(len(bigSolutions)):
         possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
         possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
-  for x in range(len(smallSolutions)):
-    for y in range(len(bigSolutions)):
-        possibilities.append([smallSolutions[x][1],bigSolutions[y][0]])
-        possibilities.append([smallSolutions[x][0],bigSolutions[y][1]])
   for i in range(len(possibilities)):
     possibilities[i].sort()
   for i in range(int(len(possibilities)/4)):
@@ -285,10 +285,6 @@ elif sides == 5:
     for y in range(len(bigSolutions)):
         possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
         possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
-  for x in range(len(smallSolutions)):
-    for y in range(len(bigSolutions)):
-        possibilities.append([smallSolutions[x][1],bigSolutions[y][0]])
-        possibilities.append([smallSolutions[x][0],bigSolutions[y][1]])
   for i in range(len(possibilities)):
     possibilities[i].sort()
   for i in range(int(len(possibilities)/4)):
@@ -318,8 +314,10 @@ elif sides == 5:
         middleList2.append([f, middle, u])
       for j in range(len(middleList1)):
         for k in range(len(middleList2)):
-          test1.append([possibilities[i*2][0], middleList1[j][0], middleList1[j][1], middleList1[j][2], possibilities[i*2][1]])
-          test2.append([possibilities[(i*2)+1][0], middleList2[k][0], middleList2[k][1], middleList2[k][2], possibilities[(i*2)+1][1]])
+          test1.append([int(possibilities[i*2][0]), int(middleList1[j][0]), int(middleList1[j][1]), int(middleList1[j][2]), int(possibilities[i*2][1])])
+          test2.append([int(possibilities[(i*2)+1][0]), int(middleList2[k][0]), int(middleList2[k][1]), int(middleList2[k][2]), int(possibilities[(i*2)+1][1])])
+          test1[0].sort()
+          test2[0].sort()
           for m in range(5):
             for n in range(5):
               check2.append(test1[0][m] + test2[0][n])
@@ -364,28 +362,20 @@ elif sides == 6:
         possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
   for x in range(len(smallSolutions)):
     for y in range(len(bigSolutions)):
-        possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
-        possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
-  for x in range(len(smallSolutions)):
-    for y in range(len(bigSolutions)):
-        possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
-        possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
-  for x in range(len(smallSolutions)):
-    for y in range(len(bigSolutions)):
         possibilities.append([smallSolutions[x][1],bigSolutions[y][0]])
         possibilities.append([smallSolutions[x][0],bigSolutions[y][1]])
   for i in range(len(possibilities)):
     possibilities[i].sort()
-  for i in range(int(len(possibilities)/4)):
-    x = int(possibilities[i*2][0])
-    y = int(possibilities[i*2][1])
+  for e in range(int(len(possibilities)/4)):
+    x = int(possibilities[e*2][0])
+    y = int(possibilities[e*2][1])
     z = x + y
     for j in range(int(z/2)):
       f = x + j
       u = y - j
       middleList1.append([f,u])
-    a = int(possibilities[(i*2)+1][0])
-    b = int(possibilities[(i*2)+1][1])
+    a = int(possibilities[(e*2)+1][0])
+    b = int(possibilities[(e*2)+1][1])
     c = a + b
     for j in range(int(c/2)):
       f = a + j
@@ -393,57 +383,57 @@ elif sides == 6:
       middleList2.append([f,u])
     for j in range(len(middleList1)):
       for k in range(len(middleList2)):
-        test1.append([possibilities[i*2][0], middleList1[j][0], middleList1[j][1], possibilities[i*2][1]])
+        test1.append([possibilities[e*2][0], middleList1[j][0], middleList1[j][1], possibilities[e*2][1]])
+        test2.append([possibilities[(e*2)+1][0], middleList2[k][0], middleList2[k][1], possibilities[(e*2)+1][1]])
         x = int(test1[0][1])
         y = int(test1[0][2])
         z = x + y
-        for j in range(int(z/2)):
+        for l in range(int(z/2)):
           f = x + j
           u = y - j
           middleList3.append([f,u])
-        test2.append([possibilities[(i*2)+1][0], middleList2[k][0], middleList2[k][1], possibilities[(i*2)+1][1]])
-        a = int(possibilities[(i*2)+1][0])
-        b = int(possibilities[(i*2)+1][1])
+        a = int(test2[0][1])
+        b = int(test2[0][2])
         c = a + b
-        for j in range(int(c/2)):
+        for k in range(int(c/2)):
           f = a + j
           u = b - j
           middleList4.append([f,u])
-        for j in range(len(middleList3)):
-          for k in range(len(middleList4)):
-            for i in range(4):
-              test3.append(test1[0][i])
-            test3.insert(2, middleList3[j][0])
-            test3.insert(3, middleList3[j][1])
-            for i in range(4):
-              test4.append(test2[0][i])
-            test4.insert(2, middleList4[k][0])
-            test4.insert(3, middleList4[k][1])
-            for m in range(6):
-              for n in range(6):
-                check2.append(test3[m] + test4[n])
-                check2.sort()
-            if check1 == check2:
-              if test3 == info1 and test4 == info2: 
-                pass
-              elif test3 != info2 and test4 != info1:
-                finish = True
-                test3Copy = test3.copy()
-                test4Copy = test4.copy()
-                test3Copy.sort()
-                test4Copy.sort()
-            test3.clear()
-            test4.clear()
-            check2.clear()
-        middleList3.clear()
-        middleList4.clear()
+        for q in range(len(middleList3)):
+          for p in range(len(middleList4)):
+              for g in range(4):
+                test3.append(test1[0][g])
+              test3.insert(2, middleList3[q][0])
+              test3.insert(3, middleList3[q][1])
+              for w in range(4):
+                test4.append(test2[0][w])
+              test4.insert(2, middleList4[p][0])
+              test4.insert(3, middleList4[p][1]) 
+              test3.sort()
+              test4.sort()
+              for m in range(6):
+                for n in range(6):
+                  check2.append(test3[m] + test4[n])
+                  check2.sort()
+              if check1 == check2:
+                if test3 == info1 and test4 == info2: 
+                  pass
+                elif test3 != info2 and test4 != info1:
+                  finish = True
+                  test3Copy = test3.copy()
+                  test4Copy = test4.copy()
+              check2.clear()
+              test3.clear()
+              test4.clear()    
         test1.clear()
         test2.clear()
+        middleList3.clear()
+        middleList4.clear()
     middleList1.clear()
     middleList2.clear()
   if finish:
-    print("\nDice 1: " + str(test3Copy[0]), str(test3Copy[1]),str(test3Copy[2]), str(test3Copy[3]),str(test3Copy[4]), str(test3Copy[5]))
-    print("Dice 2: " + str(test4Copy[0]), str(test4Copy[1]),str(test4Copy[2]), str(test4Copy[3]),str(test4Copy[4]), str(test4Copy[5]))
+    print("\nDice 1: " + str(test3Copy[0]),str(test3Copy[1]),str(test3Copy[2]),str(test3Copy[3]),str(test3Copy[4]),str(test3Copy[5]))
+    print("Dice 2: " + str(test4Copy[0]),str(test4Copy[1]),str(test4Copy[2]),str(test4Copy[3]),str(test4Copy[4]),str(test4Copy[5]))
   else:
     print("\nImpossible")
 
@@ -471,14 +461,6 @@ elif sides == 7:
     for y in range(len(bigSolutions)):
         possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
         possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
-  for x in range(len(smallSolutions)):
-    for y in range(len(bigSolutions)):
-        possibilities.append([smallSolutions[x][0],bigSolutions[y][0]])
-        possibilities.append([smallSolutions[x][1],bigSolutions[y][1]])
-  for x in range(len(smallSolutions)):
-    for y in range(len(bigSolutions)):
-        possibilities.append([smallSolutions[x][1],bigSolutions[y][0]])
-        possibilities.append([smallSolutions[x][0],bigSolutions[y][1]])
   for i in range(len(possibilities)):
     possibilities[i].sort()
   for i in range(int(len(possibilities)/4)):
@@ -682,6 +664,3 @@ elif sides == 8:
     print("Dice 2: " + str(test6Copy[0]), str(test6Copy[1]),str(test6Copy[2]), str(test6Copy[3]),str(test6Copy[4]), str(test6Copy[5]),str(test6Copy[6]), str(test6Copy[7]))
   else:
     print("\nImpossible")
-
-  
-# i did say it was spaghetti didnt I?
