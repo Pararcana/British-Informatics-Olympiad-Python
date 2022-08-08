@@ -1,10 +1,9 @@
-
-
 print("Co-ordinates are from 1 - 11")
 print("Directions are T  = Top, B = Bottom, L = Left, R = Right")
 print("Please use the format 'x y d' e.g. '1 1 T'\n") # Makes sure user knows what to input
 position1 = str(input("Input ant 1's co-ordinates and direction: "))
 position2 = str(input("Input ant 2's co-ordinates and direction: ")) # Prompts user for input
+
 
 info1 = position1.split(" ")
 info2 = position2.split(" ") # Creates list where each item is seperated, rather than being in one long string
@@ -16,6 +15,7 @@ class Ant: # Creates a class called ant
         self.y = y
         self.direction = direction
 
+        
     def move(self, x, y, direction):
         if x <= 0 or x >= 12 or y <= 0 or y >= 12:
             self.x = 99 # Moves ant outside of grid when already outside, makes sure an ant doesn't get back in the grid (probably not necessary ¯\_(ツ)_/¯)
@@ -61,6 +61,7 @@ class Ant: # Creates a class called ant
 ant1 = Ant(info1[0], info1[1], info1[2])
 ant2 = Ant(info2[0], info2[1], info2[2]) # Creates 2 objects that uses the class ant
 
+
 # Shows the grid that the ants will be traversing on in a visual form (this can be done with a for loop, but I prefer to look at it like this)
 grid = [
     [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
@@ -75,6 +76,7 @@ grid = [
     [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."],
     [".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."]
 ]
+
 
 while True:
     moves = int(input("\nInput the amount of moves you want to pass. ")) # Prompts user for input
