@@ -79,6 +79,7 @@ valid(info1, sides, True) # Checks input
 dice2 = input("Dice 2: ") # Prompts user for input
 info2 = dice2.split(" ") # Turns input into list
 valid(info2, sides, True) # Checks input
+
 smallSolutions, bigSolutions, check1, check2, possibilities, test1, test2, test3, test4, test5, test6 = [], [], [], [], [], [], [], [], [], [], []
 middleList1, middleList2, middleList3, middleList4, middleList5, middleList6 = [], [], [], [], [], []
 finish = False # Creates and assigns a lot of variables values
@@ -182,4 +183,3 @@ for iter in range(2):
 if not finish:
   print("\nImpossible")
   exit()
-  
