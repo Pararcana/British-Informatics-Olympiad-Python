@@ -61,16 +61,6 @@ def valid(example, sides, dice): # Creates a function called valid
       exit()
 
 
-def newList(sides, list1, list2, newList1, newList2, middle1, middle2):
-  for i in range(sides-2):
-    newList1.append(list1[0][i])
-    newList2.append(list2[0][i])
-  newList1.append(middleList3[xi][0])
-  newList1.append(middleList3[xi][1])
-  newList2.append(middleList4[wj][0])
-  newList2.append(middleList4[wj][1])
-
-
 def reset2(list1, list2):
   list1.clear()
   list2.clear()
@@ -103,6 +93,7 @@ sort2(info1, info2) # Sorts the lists
 
 small = int(info1[0]) + int(info2[0]) # Finds the sum of the smallest numbers
 big = int(info1[sides-1]) + int(info2[sides-1]) # Finds the sum of the largest numbers
+
 for i in range(int(small/2)):
   x = i + 1
   y = small - (i + 1)
@@ -187,6 +178,8 @@ for iter in range(2):
             reset2(middleList3, middleList4)
           reset2(test1, test2)
       reset2(middleList1, middleList2) # Resets the lists to be used again
-if not finish: # If it can't find a solution, it will print the word impossible
+      
+if not finish:
   print("\nImpossible")
   exit()
+  
