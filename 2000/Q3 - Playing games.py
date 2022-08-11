@@ -93,6 +93,7 @@ sort2(info1, info2) # Sorts the lists
 
 small = int(info1[0]) + int(info2[0]) # Finds the sum of the smallest numbers
 big = int(info1[sides-1]) + int(info2[sides-1]) # Finds the sum of the largest numbers
+
 for i in range(int(small/2)):
   x = i + 1
   y = small - (i + 1)
@@ -178,6 +179,7 @@ for iter in range(2):
               reset2(middleList3, middleList4)
             reset2(test1, test2)
         reset2(middleList1, middleList2) # Resets the lists to be used again
+        
 if not finish:
   print("\nImpossible\n")
   exit()
