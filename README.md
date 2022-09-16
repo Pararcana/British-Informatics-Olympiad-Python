@@ -1,6 +1,6 @@
 # BIO-2000-Solutions
 
-Feel free to copy the code, just make sure to credit me (@Catatria).
+Feel free to copy the code, just make sure to credit me (@Pararcana).
 
 | Q1| Q2| Q3|
 |---|---|---|
