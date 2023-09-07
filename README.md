@@ -4,7 +4,16 @@ Feel free to copy the code, just make sure to credit me (@Pararcana).
 
 |Year| Q1| Q2| Q3|
 |---|---|---|---|
-|2000| ✅| ✅| ✅|
+|1997|✅|❌|❌|
+|---|---|---|---|
+|1998|✅|❌|❌|
+|---|---|---|---|
+|2000|✅|✅|✅|
+|---|---|---|---|
+|2022|✅|❌|❌|
+|---|---|---|---|
+|2023|✅|❌|❌|
+|---|---|---|---|
 
 All of the code have comments explaining how they work, and all score full marks.
 
