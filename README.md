@@ -1,10 +1,10 @@
-# BIO-2000-Solutions
+# BIO-Solutions
 
 Feel free to copy the code, just make sure to credit me (@Pararcana).
 
-| Q1| Q2| Q3|
-|---|---|---|
-| ✅| ✅| ✅|
+|Year| Q1| Q2| Q3|
+|---|---|---|---|
+|2000| ✅| ✅| ✅|
 
 All of the code have comments explaining how they work, and all score full marks.
 
