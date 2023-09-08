@@ -14,6 +14,6 @@ All of the code score full marks, and no libraries are used.
 
 Revamp of some of my older solutions soon.
 
-All of the Question 1 solutions (bar 2000, which will be revamped soon) have been solved in under 25 lines.
+All of the Question 1 solutions (bar 2000, which will be revamped soon) have been solved in 25 lines or under.
 
 Any issue or questions with the code can be put into the issues tab. I will try to answer them to the best of my ability.
