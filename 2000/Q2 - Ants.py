@@ -1,9 +1,8 @@
 print("""Co-ordinates are from 1 - 11")
 Directions are T  = Top, B = Bottom, L = Left, R = Right
 Please use the format 'x y d' e.g. '1 1 T'\n""") 
-position1 = str(input("Input ant 1's co-ordinates and direction: "))
-position2 = str(input("Input ant 2's co-ordinates and direction: ")) 
-info1, info2 = position1.split(" "), position2.split(" ")
+position1 = str(input("Input ant 1's co-ordinates and direction: ")).split(" ")
+position2 = str(input("Input ant 2's co-ordinates and direction: ")).split(" ")
 directions = ["T", "R", "B", "L"]
 
 def rotate(direction, rotation):
@@ -31,7 +30,7 @@ class Ant:
                 self.direction = rotate(direction, empty and 1 or -1)
                 self.x, self.y = x, y
               
-ant1, ant2 = Ant(info1[0], info1[1], info1[2]), Ant(info2[0], info2[1], info2[2])
+ant1, ant2 = Ant(position1[0], position1[1], position1[2]), Ant(position2[0], position2[1], position2[2])
 grid = []
 for _ in range(11):
   grid.append([".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."])
@@ -48,3 +47,4 @@ while True:
       print(" ".join(grid[i]))
     print(ant1.x == 99 and "Removed" or " ".join([str(ant1.x), str(ant1.y), ant1.direction]))
     print(ant2.x == 99 and "Removed" or " ".join([str(ant2.x), str(ant2.y), ant2.direction]))
+
