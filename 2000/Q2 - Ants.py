@@ -30,7 +30,8 @@ class Ant:
                 self.direction = rotate(direction, empty and 1 or -1)
                 self.x, self.y = x, y
               
-ant1, ant2 = Ant(position1[0], position1[1], position1[2]), Ant(position2[0], position2[1], position2[2])
+ant1 = Ant(position1[0], position1[1], position1[2])
+ant2 = Ant(position2[0], position2[1], position2[2])
 grid = []
 for _ in range(11):
   grid.append([".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."])
