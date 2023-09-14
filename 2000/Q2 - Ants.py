@@ -12,24 +12,24 @@ def rotate(direction, rotation):
   return directions[index]
   
 class Ant: 
-    def __init__(self, x, y, direction): 
-        self.x, self.y, self.direction = x, y, direction
-    def move(self, x, y, direction):
-        if x <= 0 or x >= 12 or y <= 0 or y >= 12:
-            self.x = 99 
-        else:
-            if direction == "R" or direction == "L":
-              x += direction == "R" and 1 or -1
-            elif direction == "T" or direction == "B":
-              y += direction == "T" and 1 or -1
-            if x <= 0 or x >= 12 or y <= 0 or y >= 12:
-              self.x = 99
-            else:
-                empty = grid[-y + 11][x - 1] == "."
-                grid[-y + 11][x - 1] = empty and "*" or "."
-                self.direction = rotate(direction, empty and 1 or -1)
-                self.x, self.y = x, y
-              
+  def __init__(self, x, y, direction): 
+    self.x, self.y, self.direction = x, y, direction
+  def move(self, x, y, direction):
+    if x <= 0 or x >= 12 or y <= 0 or y >= 12:
+      self.x = 99 
+    else:
+      if direction == "R" or direction == "L":
+        x += direction == "R" and 1 or -1
+      elif direction == "T" or direction == "B":
+        y += direction == "T" and 1 or -1
+      if x <= 0 or x >= 12 or y <= 0 or y >= 12:
+        self.x = 99
+      else:
+        empty = grid[-y + 11][x - 1] == "."
+        grid[-y + 11][x - 1] = empty and "*" or "."
+        self.direction = rotate(direction, empty and 1 or -1)
+        self.x, self.y = x, y
+            
 ant1 = Ant(position1[0], position1[1], position1[2])
 ant2 = Ant(position2[0], position2[1], position2[2])
 grid = []
@@ -48,4 +48,3 @@ while True:
       print(" ".join(grid[i]))
     print(ant1.x == 99 and "Removed" or " ".join([str(ant1.x), str(ant1.y), ant1.direction]))
     print(ant2.x == 99 and "Removed" or " ".join([str(ant2.x), str(ant2.y), ant2.direction]))
-
