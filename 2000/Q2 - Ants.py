@@ -1,11 +1,9 @@
-print("Co-ordinates are from 1 - 11")
-print("Directions are T  = Top, B = Bottom, L = Left, R = Right")
-print("Please use the format 'x y d' e.g. '1 1 T'\n") 
+print("""Co-ordinates are from 1 - 11")
+Directions are T  = Top, B = Bottom, L = Left, R = Right
+Please use the format 'x y d' e.g. '1 1 T'\n""") 
 position1 = str(input("Input ant 1's co-ordinates and direction: "))
 position2 = str(input("Input ant 2's co-ordinates and direction: ")) 
-
-info1 = position1.split(" ")
-info2 = position2.split(" ")
+info1, info2 = position1.split(" "), position2.split(" ")
 directions = ["T", "R", "B", "L"]
 
 def rotate(direction, rotation):
@@ -13,13 +11,10 @@ def rotate(direction, rotation):
   if index >= 4:
     index -= 4
   return directions[index]
-
+  
 class Ant: 
     def __init__(self, x, y, direction): 
-        self.x = x
-        self.y = y
-        self.direction = direction
-
+        self.x, self.y, self.direction = x, y, direction
     def move(self, x, y, direction):
         if x <= 0 or x >= 12 or y <= 0 or y >= 12:
             self.x = 99 
@@ -34,12 +29,9 @@ class Ant:
                 empty = grid[-y + 11][x - 1] == "."
                 grid[-y + 11][x - 1] = empty and "*" or "."
                 self.direction = rotate(direction, empty and 1 or -1)
-                self.x = x
-                self.y = y
-
-ant1 = Ant(info1[0], info1[1], info1[2])
-ant2 = Ant(info2[0], info2[1], info2[2])
-
+                self.x, self.y = x, y
+              
+ant1, ant2 = Ant(info1[0], info1[1], info1[2]), Ant(info2[0], info2[1], info2[2])
 grid = []
 for _ in range(11):
   grid.append([".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."])
@@ -54,5 +46,5 @@ while True:
     print("")
     for i in range(11):
       print(" ".join(grid[i]))
-    print(ant1.x == 99 and "Removed" or [ant1.x, ant1.y, ant1.direction])
-    print(ant2.x == 99 and "Removed" or [ant2.x, ant2.y, ant2.direction])
+    print(ant1.x == 99 and "Removed" or " ".join([str(ant1.x), str(ant1.y), ant1.direction]))
+    print(ant2.x == 99 and "Removed" or " ".join([str(ant2.x), str(ant2.y), ant2.direction]))
