@@ -14,10 +14,9 @@ def rotate(direction, rotation):
 class Ant: 
   def __init__(self, x, y, direction): 
     self.x, self.y, self.direction = x, y, direction
+    
   def move(self, x, y, direction):
-    if x <= 0 or x >= 12 or y <= 0 or y >= 12:
-      self.x = 99 
-    else:
+    if not(x <= 0 or x >= 12 or y <= 0 or y >= 12):
       if direction == "R" or direction == "L":
         x += direction == "R" and 1 or -1
       elif direction == "T" or direction == "B":
@@ -32,6 +31,7 @@ class Ant:
             
 ant1 = Ant(position1[0], position1[1], position1[2])
 ant2 = Ant(position2[0], position2[1], position2[2])
+
 grid = []
 for _ in range(11):
   grid.append([".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."])
