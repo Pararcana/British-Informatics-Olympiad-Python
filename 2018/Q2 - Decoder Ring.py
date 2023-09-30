@@ -14,7 +14,7 @@ for _ in range(26):
   ring.append(alphabet.pop(counter))
 print("".join(ring[0:6]))
 
-for i in range(len(word)):
-  answer.append(ring[ord(word[i])-65])
+for char in word:
+  answer.append(ring[ord(char)-65])
   ring.append(ring.pop(0))
 print("".join(answer))
