@@ -1,5 +1,4 @@
-fib = [1, 2]
-ans = []
+fib, ans = [1, 2], []
 total = 0
 
 while fib[-1] < 1000000:
