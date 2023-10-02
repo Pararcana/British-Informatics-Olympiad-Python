@@ -8,6 +8,7 @@ Feel free to copy the code, just make sure to credit me (@Pararcana).
 |1998|✅|❌|❌|
 |2000|✅|✅|✅|
 |2002|✅|❌|❌|
+|2003|✅|❌|❌|
 |2018|✅|✅|❌|
 |2022|✅|❌|❌|
 |2023|✅|❌|❌|
