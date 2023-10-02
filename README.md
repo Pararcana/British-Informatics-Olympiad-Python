@@ -17,8 +17,8 @@ All of the code score full marks, and no libraries are used.
 
 BIO 2000 Q3 is a mess, and will be revamped soon.
 
-All of the Question 1 solutions have been solved in 25 lines or under.
+All of the Question 1 solutions have been solved in 25 lines or under so they should be very readable.
 
-Any issues or questions with the code can be put into the issues tab. I will try to answer them to the best of my ability.
+Any issues or questions with the code, such as if you want me to explain any methods I used or how the code works, can be put into the issues tab. I will try to answer them to the best of my ability.
 
 I am not looking for solutions by anyone else, as I intend for this repository to only include my solutions. Please do not be offended if I reject a pull request.
