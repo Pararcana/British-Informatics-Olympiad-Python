@@ -3,8 +3,7 @@ isbn.reverse()
 total = 0
 
 for i, v in enumerate(isbn):
-  try:
-    total += int(v) * (i + 1)
+  try: total += int(v) * (i + 1)
   except ValueError:
     if v == "X":
       total += 10
