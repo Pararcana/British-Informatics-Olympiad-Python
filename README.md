@@ -6,7 +6,7 @@ Feel free to copy the code, just make sure to credit me (@Pararcana).
 |---|---|---|---|
 |1996|✅|❌|❌|
 |1998|✅|❌|❌|
-|2000|✅|✅|✅|
+|2000|✅|✅|❌|
 |2002|✅|❌|❌|
 |2003|✅|❌|❌|
 |2018|✅|✅|✅|
@@ -15,7 +15,7 @@ Feel free to copy the code, just make sure to credit me (@Pararcana).
 
 All of the code score full marks, and no libraries are used.
 
-BIO 2000 Q3 is a mess, and will be revamped soon.
+BIO 2000 Q3 is a mess (partial marks due to time constraints), and I am currently working on a revamp.
 
 All of the Question 1 solutions have been solved in 25 lines or under so they should be very readable.
 
