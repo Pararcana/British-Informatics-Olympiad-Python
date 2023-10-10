@@ -13,16 +13,15 @@ while len(serials) != 0:
       surDigits = [currentSerial[i-1], currentSerial[i+2]]
     else:
       surDigits = i == 0 and [currentSerial[2]] or [currentSerial[-3]]
-    swappable = False
+      
     for j in range(len(surDigits)):
       middleCheck = [sigDigits[0], surDigits[j], sigDigits[1]]
       if not(surDigits[j] == max(middleCheck) or surDigits[j] == min(middleCheck)):
-        swappable = True
-    newSerial = list(currentSerial).copy()
-    newSerial[i:i+2] = sigDigits[::-1]
-    newSerial = "".join(newSerial)
-    if swappable and match(exhaustedSerials, newSerial) and match(serials, newSerial): 
-      serials.append([newSerial, serials[0][1] + 1])
+        newSerial = list(currentSerial).copy()
+        newSerial[i:i+2] = sigDigits[::-1]
+        newSerial = "".join(newSerial)
+        if match(exhaustedSerials, newSerial) and match(serials, newSerial):
+          serials.append([newSerial, serials[0][1] + 1])
   exhaustedSerials.append(serials.pop(0))
 
 for item in exhaustedSerials:
