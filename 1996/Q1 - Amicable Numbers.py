@@ -13,4 +13,4 @@ factoriser(factors2, num2)
 if (sum(factors1) == num2) and (sum(factors2) == num1) and num1 != num2:
   print("Amicable numbers.")
 else:
-  exit()
+  print("Not amicable.")
