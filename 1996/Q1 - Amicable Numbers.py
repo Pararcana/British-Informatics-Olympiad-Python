@@ -7,19 +7,10 @@ def factoriser(arr, num):
     if num%(i+1) == 0 and i+1 != num:
       arr.append(i+1)
 
-
-def adder(arr):
-  total = 0
-  for item in arr:
-    total += item
-  return total
-
-
 factoriser(factors1, num1)
 factoriser(factors2, num2)
 
-
-if (adder(factors1) == num2) and (adder(factors2) == num1):
+if (sum(factors1) == num2) and (sum(factors2) == num1) and num1 != num2:
   print("Amicable numbers.")
 else:
   exit()
