@@ -1,1 +1,1 @@
-print(sorted(input()) == sorted(input()) and "Anagrams" or "Not anagrams")
+print(sorted(input("Word 1: ")) == sorted(input("Word 2: ")) and "Anagrams" or "Not anagrams")
