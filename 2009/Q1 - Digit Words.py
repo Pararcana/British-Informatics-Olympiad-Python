@@ -22,12 +22,17 @@ for digit in digitWords:
       digitOccurences.clear()
 
     lb = -1
+    valid = True
     for i in range(len(digit)):
       low = lowest(order[i].copy(), lb)
       if low is None or low <= lb:
-        print("NO")
-        exit()
+        valid = False
+        break
       lb = low
+    if valid: 
+      print(digitWords.index(digit) + 1)
+      exit()
+print("NO")
 
     print(digitWords.index(digit) + 1)
     exit()
