@@ -2,7 +2,7 @@ river1, river3, river9 = [1], [3], [9]
 
 def gen_rivers(river):
   while river[-1] < 25000:
-    sumDigits = sum([int(x) for x in list(str(river[-1]))])
+    sumDigits = sum([int(x) for x in str(river[-1])])
     river.append(river[-1] + sumDigits)
 
 gen_rivers(river1)
@@ -21,4 +21,4 @@ while True:
   elif k in river9:
     print("Meets river 9 at " + str(k))
     break
-  k += sum([int(x) for x in list(str(k))])
+  k += sum([int(x) for x in str(k)])
