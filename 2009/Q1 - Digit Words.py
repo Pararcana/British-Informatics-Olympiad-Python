@@ -33,8 +33,3 @@ for digit in digitWords:
       print(digitWords.index(digit) + 1)
       exit()
 print("NO")
-
-    print(digitWords.index(digit) + 1)
-    exit()
-
-print("NO")
