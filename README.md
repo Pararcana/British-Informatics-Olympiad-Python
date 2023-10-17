@@ -17,7 +17,7 @@ All of the code score full marks, and no libraries are used.
 
 BIO 2000 Q3 is a mess (partial marks due to time constraints), and I am currently working on a revamp.
 
-All of the Question 1 solutions have been solved in 25 lines or under so they should be very readable.
+All of the Question 1 solutions have been solved in 35 lines or under so they should be very readable.
 
 Any issues or questions with the code, such as if you want me to explain any methods I used or how the code works, can be put into the issues tab. I will try to answer them to the best of my ability.
 
