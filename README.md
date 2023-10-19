@@ -35,6 +35,7 @@ You can find which solutions I have in the table below:
 |2016|❌|❌|❌|
 |2017|✅|❌|❌|
 |2018|✅|✅|✅|
+|2019|❌|❌|❌|
 |2020|✅|❌|❌|
 |2021|❌|❌|❌|
 |2022|✅|❌|❌|
