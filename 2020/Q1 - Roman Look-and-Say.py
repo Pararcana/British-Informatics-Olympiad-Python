@@ -11,7 +11,7 @@ cast = [[-1], [0], [0,0], [0,0,0], [0,1], [1], [1,0], [1,0,0], [1,0,0,0], [0,2]]
 def roman_splitter(roman):
   roman = list("".join(roman))
   spl = []
-  
+
   for i in range(len(roman) - 1):
     if roman[i] != roman[i + 1]:
       spl.append(i + 1)
@@ -36,13 +36,5 @@ for _ in range(repeat):
     romanTemp.append(roman[i][0])
   roman = romanTemp.copy()
 
-roman = "".join(roman)
-iCounter, vCounter = 0, 0
-
-for v in roman:
-  if v == "I":
-    iCounter += 1
-  elif v == "V":
-    vCounter += 1
-    
-print(iCounter, vCounter)
+roman = list("".join(roman))
+print(roman.count("I"), roman.count("V"))
