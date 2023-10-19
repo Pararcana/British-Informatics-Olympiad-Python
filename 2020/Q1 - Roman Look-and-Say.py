@@ -9,16 +9,16 @@ numerals = [
 cast = [[-1], [0], [0,0], [0,0,0], [0,1], [1], [1,0], [1,0,0], [1,0,0,0], [0,2]]
 
 def roman_splitter(roman):
-  roman = list("".join(roman))
+  roman = "".join(roman) + " "
   spl = []
-
+  counter = 1
   for i in range(len(roman) - 1):
     if roman[i] != roman[i + 1]:
-      spl.append(i + 1)
-  spl.reverse()
-  for n in spl:
-    roman.insert(n, "/")
-  return "".join(roman).split("/")
+      spl.append(roman[i]*counter)
+      counter = 1
+    else:
+      counter += 1
+  return spl
 
 
 def roman_to_int(num):
