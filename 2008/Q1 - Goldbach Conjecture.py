@@ -1,8 +1,8 @@
-primes = []
+primes = [2]
 target = int(input("Enter a number: "))
 counter = 0
 
-for i in range(2, target + 1):
+for i in range(3, target + 1, 2):
   prime = True
   for j in range(2, int(i**(1/2)) + 1):
     if i % j == 0:
@@ -16,4 +16,3 @@ for i in range(len(primes)):
     if primes[i] + primes[j] == target:
       counter += 1
 print(counter)
-    
