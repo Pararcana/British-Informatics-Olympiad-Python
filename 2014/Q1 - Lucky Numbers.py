@@ -11,8 +11,8 @@ for _ in range(168):
 
 num = int(input("Enter a number: "))
 
-lowest = min([v for v in lucky if v > num])
 highest = max([v for v in lucky if v < num])
+lowest = min([v for v in lucky if v > num])
 
 print(highest, lowest)
 
