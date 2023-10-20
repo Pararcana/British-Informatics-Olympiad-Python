@@ -1,13 +1,12 @@
-aIncre, bIncre = (int(x) for x in input("Enter two numbers: ").split())
-a = aIncre + 60
-b = bIncre + 60
+aIncre, bIncre = (int(x) + 60 for x in input("Enter two numbers: ").split())
+a, b = aIncre, bIncre
 
 def minutesToHours(min):
   return [(min // 60) % 24, min % 60]
 
 while minutesToHours(a) != minutesToHours(b):
-  a += 60 + aIncre
-  b += 60 + bIncre
+  a += aIncre
+  b += bIncre
 
 hours, minutes = minutesToHours(a)
 print("{:02d}".format(hours)+":"+"{:02d}".format(minutes))
