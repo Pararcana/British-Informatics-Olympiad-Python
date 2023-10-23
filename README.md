@@ -37,6 +37,6 @@ Any issues or questions with the code, such as if you want me to explain any met
 |2018|✅|✅|✅|
 |2019|✅|❌|❌|
 |2020|✅|❌|❌|
-|2021|➖|❌|❌|
+|2021|✅|❌|❌|
 |2022|✅|❌|❌|
 |2023|✅|❌|❌|
