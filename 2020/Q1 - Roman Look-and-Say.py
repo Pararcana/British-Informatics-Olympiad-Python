@@ -1,12 +1,9 @@
-roman, repeat = input("Input Roman Numerals and a number: ").split()
-roman, repeat = list(roman.upper()), int(repeat)
 numerals = [
-["M", ""],
-["C", "D", "M", ""],
-["X", "L", "C", ""],
-["I", "V", "X", ""]
+    ["", "M", "MM", "MMM"],
+    ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"],
+    ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
+    ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
 ]
-cast = [[-1], [0], [0,0], [0,0,0], [0,1], [1], [1,0], [1,0,0], [1,0,0,0], [0,2]]
 
 def roman_splitter(roman):
   roman = "".join(roman) + " "
@@ -20,21 +17,24 @@ def roman_splitter(roman):
       counter += 1
   return spl
 
-
 def roman_to_int(num):
   ans = []
-  for i, n in enumerate(num):
-    for j in range(len(cast[int(n)])):
-      ans.append(numerals[i][cast[int(n)][j]])
+  for i, v in enumerate(num):
+      ans.append(numerals[i][int(v)])
   return "".join(ans)
 
-for _ in range(repeat):
-  romanTemp = []
-  roman = roman_splitter(roman)
-  for i in range(len(roman)):
-    romanTemp.append(roman_to_int("{:04d}".format(len(roman[i]))))
-    romanTemp.append(roman[i][0])
-  roman = romanTemp.copy()
+def step(inpArr):
+  outArr = []
+  inpArr = roman_splitter(inpArr)
+  for i in range(len(inpArr)):
+    outArr.append(roman_to_int("{:04d}".format(len(inpArr[i]))))
+    outArr.append(inpArr[i][0])
+  return outArr
 
-roman = list("".join(roman))
+roman, repeat = input("Input Roman Numerals and a number: ").split()
+roman, repeat = list(roman.upper()), int(repeat)
+
+for _ in range(repeat):
+  roman = step(roman)
+roman = "".join(roman)
 print(roman.count("I"), roman.count("V"))
