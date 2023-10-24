@@ -7,11 +7,10 @@ def permutations(n, total, limit, parity):
   else:
     if parity:
       spl[(len(spl)-1)//2] = length - (sum(spl)-spl[(len(spl)-1)//2])
-      comb.append(spl.copy())
     else:
       midSum = (length - (sum(spl) - (spl[(len(spl)-1)//2] + spl[len(spl)//2])))//2
       spl[len(spl)//2], spl[(len(spl)-1)//2] = midSum, midSum
-      comb.append(spl.copy())
+    comb.append(spl.copy())
 
 def splitter(splArr):
   counter, outArr = 0, []
@@ -30,3 +29,17 @@ def checkPalindrome(arr):
   for v in arr:
     compressed.append(parts.index(v))
   return compressed == list(reversed(compressed))
+
+palindrome = input("Enter a string: ")
+length = len(palindrome)
+total = 0
+
+for i in range(2, length + 1):
+  if length%2==0 or (length%2!=0 and i%2!=0):
+    spl = [0] * i
+    comb = []
+    permutations(0, 0, (i-1)//2, i%2!=0)
+    for v in comb:
+      if checkPalindrome(splitter(v)):
+        total += 1
+print(total)
