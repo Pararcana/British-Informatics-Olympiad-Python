@@ -1,5 +1,7 @@
 # BIO-Solutions
 
+## The letter enclosed in square brackets to the right of the question represents the difficulty.
+
 ### Feel free to copy the code, just make sure to credit me (@Pararcana).
 
 All of the code score full marks, and no libraries are used.
