@@ -14,3 +14,8 @@ if (sum(factors1) == num2) and (sum(factors2) == num1) and num1 != num2:
   print("Amicable numbers.")
 else:
   print("Not amicable.")
+
+"""
+Difficulty: E
+This one was fairly easy to do, the only real challenge here is making a function to find the factors of each input, the rest is elementary.
+"""
