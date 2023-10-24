@@ -17,5 +17,6 @@ else:
 
 """
 Difficulty: E
-This one was fairly easy to do, the only real challenge here is making a function to find the factors of each input, the rest is elementary.
+This one was fairly easy to do, the only real challenge here is making a
+function to find the factors of each input, the rest is elementary.
 """
