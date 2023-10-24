@@ -9,9 +9,8 @@ def permutations(n, total, limit, parity):
       spl[(len(spl)-1)//2] = length - (sum(spl)-spl[(len(spl)-1)//2])
       comb.append(spl.copy())
     else:
-      midSum = length - (sum(spl) - (spl[(len(spl)-1)//2] + spl[len(spl)//2]))
-      spl[len(spl)//2] = midSum//2
-      spl[(len(spl)-1)//2] = midSum//2
+      midSum = (length - (sum(spl) - (spl[(len(spl)-1)//2] + spl[len(spl)//2])))//2
+      spl[len(spl)//2], spl[(len(spl)-1)//2] = midSum, midSum
       comb.append(spl.copy())
 
 def checkPalindrome(arr):
