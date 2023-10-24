@@ -13,6 +13,13 @@ def permutations(n, total, limit, parity):
       spl[len(spl)//2], spl[(len(spl)-1)//2] = midSum, midSum
       comb.append(spl.copy())
 
+def splitter(splArr):
+  counter, outArr = 0, []
+  for v in splArr:
+    outArr.append(palindrome[counter : counter + v])
+    counter += v
+  return outArr
+
 def checkPalindrome(arr):
   parts = []
   for v in arr:
