@@ -28,3 +28,10 @@ date[0] += days
 
 date = [str(x) for x in date]
 print(" ".join(date))
+"""
+Difficulty: D
+The solution for this one requires you to calculate the difference between the first of
+January 2000 and whatever date they give you. Therefore, first convert the mayan date into
+days, and add the difference to 1/1/2000 to get the new date as your output. You might want
+to use the datetime module to make things easier for yourself.
+"""
