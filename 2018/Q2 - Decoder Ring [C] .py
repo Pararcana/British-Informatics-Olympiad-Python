@@ -18,3 +18,9 @@ for char in word:
   answer.append(ring[ord(char)-65])
   ring.append(ring.pop(0))
 print("".join(answer))
+"""
+Difficulty: C
+This one wasn't too hard, you can split the problem into two parts:
+generating the ring, which is the encryption key, and using a
+circular shift after each individual letter is encrypted.
+"""
