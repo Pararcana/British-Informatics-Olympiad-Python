@@ -11,3 +11,10 @@ for _ in range(friends - 1):
   ring.pop(counter)
 
 print(ring[0] + 1)
+"""
+Difficulty: D
+To solve this, you can use a counter to point to the person that
+is going to get eliminated and increment it based on the number of
+words in the rhyme. To prevent an overflow error, you should loop 
+the counter back around when it goes above the length of the list.
+"""
