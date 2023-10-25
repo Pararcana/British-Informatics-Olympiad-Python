@@ -11,3 +11,8 @@ for _ in range(len(colours) - 1):
   coloursTemp.clear()
   
 print(colours[0])
+"""
+Difficulty: E
+This was a very simple and fun puzzle to implement with only a couple of steps. You need to compare 
+two values to find the next one, and repeat this process until you are left with only one value.
+"""
