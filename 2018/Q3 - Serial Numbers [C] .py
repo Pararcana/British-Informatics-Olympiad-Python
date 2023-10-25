@@ -27,3 +27,11 @@ while len(serials) != 0:
 for item in exhaustedSerials:
   answer.append(item[1])
 print(max(answer))
+"""
+Difficulty: C
+This wasn't too hard, as you simply needed to check the surrounding
+digits of the two that you are trying to swap, and see if at least one
+of the surrounding digits is between them numerically. Then, repeat
+this process for every new serial you generate. It is a good idea to use
+a linked list to hold the serial, and how many steps it took to generate.
+"""
