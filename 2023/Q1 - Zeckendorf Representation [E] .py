@@ -17,5 +17,5 @@ print(" ".join(ans))
 Difficulty: E
 The first step is simply to generate the fibonacci sequence up to 1,000,000.
 Next, work from the back and save any number in the sequence that fits into
-the input in a list. Finally, output the list.
+the input in a list. Then, subtract that number from the input and output the list.
 """
