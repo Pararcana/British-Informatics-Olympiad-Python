@@ -12,3 +12,10 @@ for i, n in enumerate(num):
         ans.append(roman[i][cast[int(n)][j]])
     
 print("".join(ans))
+"""
+Difficulty: D
+This question is only as hard as you make it, and there are multiple ways to approach
+this question, the easiest of which would simply to convert units, tens, hundreds and 
+thousands seperately into roman numeral form, then concatenate the result. Leetcode also 
+has this question (#12) with every single test case if you want to check your solution.
+"""
