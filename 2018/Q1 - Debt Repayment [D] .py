@@ -12,3 +12,9 @@ while debt != 0:
   debt -= debt <= 5000 and debt or max(ceil(debt * repayment), 5000)
 
 print(total/100)
+"""
+Difficulty: D
+This would have been lower in difficulty, were it not for the floating point errors that
+you have to avoid. Other than that, this problem consists of applying a simple formula,
+which is fairly simple.
+"""
