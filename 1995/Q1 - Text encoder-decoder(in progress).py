@@ -55,7 +55,3 @@ while choice != 4:
     print(decoder(key, input("Enter message: ").upper()))
   choice = presentMenu()
 exit()
-key = findKey("I wandered lonely as a cloud".upper())
-v = encoder(key, "I WANDERED LONELY AS A CLOUD THAT FLOATS ON HIGH O\ER DALE AND HILL WHEN ALL AT ONCE I SAW A CROWD, A\ FLOCK OF WANDRING DAFFODILS.#".upper())
-print(v)
-print(decoder(key, v.upper()))
