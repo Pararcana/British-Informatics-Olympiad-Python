@@ -8,6 +8,8 @@ def formatText(string):
 
 def decoder(key, ciphertext):
   ciphertext = [v for v in ciphertext if v in alpha]
+  print("Message is:")
+  formatText(list(ciphertext))
   final = []
 
   counter = key.index(ciphertext[0])
@@ -17,11 +19,13 @@ def decoder(key, ciphertext):
     if counter >= 29:
       counter -= 29
   final.append(alpha[counter - 1])
-
+  print("Decoded message is:")
   return "".join(final)
 
 def encoder(key, plaintext):
   plaintext = [v for v in plaintext if v in alpha]
+  print("Message is:")
+  formatText(list(plaintext))
   final = []
   
   counter = 0
@@ -30,7 +34,7 @@ def encoder(key, plaintext):
     if counter >= 29:
       counter -= 29
     final.append(key[counter])
-
+  print("Encoded message is:")
   return "".join(final)
 
 def presentMenu():
