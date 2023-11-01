@@ -48,3 +48,10 @@ while True:
       print(" ".join(v))
     print(ant1.x == 99 and "Removed" or " ".join([str(ant1.x), str(ant1.y), ant1.direction]))
     print(ant2.x == 99 and "Removed" or " ".join([str(ant2.x), str(ant2.y), ant2.direction]))
+"""
+Difficulty: B
+This questions involves the use of classes, so you can define how both ants move according to
+the question. This isn't that hard to do, considering the ants have fairly simple rules. Another
+thing to remember is that you need to update the grid each turn. All in all, not too difficult,
+assuming you know how to create and use classes.
+"""
