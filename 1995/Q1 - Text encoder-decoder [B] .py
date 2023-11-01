@@ -66,3 +66,21 @@ while choice != 4:
     formatText(list(decoder(key, input("Enter message: ").upper())))
   choice = presentMenu()
 exit()
+"""
+Difficulty: B
+The only real challenges here are the encoding and decoding functions.
+For the encoding function, you are given the steps to do it, so it is
+fairly easy to implement. On the other hand, for decoding, you have to
+figure out the decoding method yourself. What you have to realise, is
+that it is the difference between the key position of ajacent characters
+that allows you to derive the original text. As for the other tasks,
+such as formatting the text in the way they asked, capitallising each 
+letter and removing unknown ones are a lot easier to implement. 
+
+For the record, I believe that their markscheme is wrong, and that
+'ooanjP,gpxxltluxppqcc' decoded gives 'I WANCFRED LONELY AS ' rather than
+'I WANAHRED LONELY AS ', and it is instead 'ooanjK,gpxxltluxppqcc'
+that gives 'I WANAHRED LONELY AS ' (Note that P -> K). If it turns 
+out I am incorrect, open an issue under the issues tab, show me
+the proof and I will correct it as soon as possible.
+"""
