@@ -16,6 +16,7 @@ All Q1s are done, and you can find the code in the repo. I am currently in the p
 
 |Year| Q1| Q2| Q3|
 |---|---|---|---|
+|1995|✅|❌|❌|
 |1996|✅|❌|❌|
 |1997|✅|❌|❌|
 |1998|✅|❌|❌|
