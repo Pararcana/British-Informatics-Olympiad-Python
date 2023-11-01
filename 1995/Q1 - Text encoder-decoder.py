@@ -1,5 +1,11 @@
 alpha = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ,. ")  
 
+def formatText(string):
+  for i in range(len(string)//50, 0, -1):
+    string.insert(i*50, "\ \n")
+  string.append("#")
+  print("".join(string))
+
 def decoder(key, ciphertext):
   ciphertext = [v for v in ciphertext if v in alpha]
   final = []
@@ -51,8 +57,8 @@ while choice != 4:
   if choice == 1:
     key = findKey(input("Enter a code key: ").upper())
   elif choice == 2:
-    print(encoder(key, input("Enter message: ").upper()))
+    formatText(list(encoder(key, input("Enter message: ").upper())))
   elif choice == 3:
-    print(decoder(key, input("Enter message: ").upper()))
+    formatText(list(decoder(key, input("Enter message: ").upper())))
   choice = presentMenu()
 exit()
