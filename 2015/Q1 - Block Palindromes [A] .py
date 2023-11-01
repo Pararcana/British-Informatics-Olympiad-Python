@@ -44,7 +44,7 @@ for i in range(2, length + 1):
         total += 1
 print(total)
 """
-Difficulty: B
+Difficulty: A
 This was the hardest Q1 by far. The use of recursion to generate all the different ways you
 could split a string of length n into x number of parts was pretty hard to implement. Other
 than that, the functions to split the string into different parts based on the permutations
