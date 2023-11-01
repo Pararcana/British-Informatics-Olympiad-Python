@@ -10,6 +10,7 @@ def decoder(key, ciphertext):
     counter = 29 - (key.index(ciphertext[i]) - key.index(ciphertext[i+1]))
     if counter >= 29:
       counter -= 29
+  final.append(alpha[counter - 1])
 
   return "".join(final)
 
