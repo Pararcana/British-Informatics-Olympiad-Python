@@ -13,10 +13,11 @@ Any issues or questions with the code, such as if you want me to explain any met
 All Q1s are done, and you can find the code in the repo. I am currently in the process of giving each one a difficulty from S to F.
 
 **The difficulties (from hardest to easiest) are: X, S, A, B, C, D, E, F. You can find which solutions I have in the table below:**
+**If I have them, there will be either be a tick, or a letter representing the difficulty.**
 
 |Year| Q1| Q2| Q3|
 |---|---|---|---|
-|1995|B|❌|❌|
+|1995|**B**|❌|❌|
 |1996|E|❌|❌|
 |1997|✅|❌|❌|
 |1998|D|❌|❌|
