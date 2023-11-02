@@ -19,7 +19,7 @@ All Q1s are done, and you can find the code in the repo. I am currently in the p
 |---|---|---|---|
 |1995|**B**|❌|❌|
 |1996|**E**|❌|❌|
-|1997|✅|❌|❌|
+|1997|**D**|❌|❌|
 |1998|**D**|❌|❌|
 |1999|✅|❌|❌|
 |2000|**E**|**B**|➖|
