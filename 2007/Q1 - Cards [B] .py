@@ -19,7 +19,7 @@ for i in range(2, 6):
     
 print(points)
 """
-Difficulty: C
+Difficulty: 
 The only hard part was making the combinations function,
 which uses recursion, but you can avoid that by simply
 using the premade one in the itertools library.
