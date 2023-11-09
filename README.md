@@ -25,7 +25,7 @@ All Q1s are done, and you can find the code in the repo. I am currently in the p
 |2000|**E**|**B**|➖|
 |2001|**D**|❌|❌|
 |2002|**E**|❌|❌|
-|2003|✅|❌|❌|
+|2003|**D**|❌|❌|
 |2004|**D**|❌|❌|
 |2005|✅|❌|❌|
 |2006|**F**|❌|❌|
