@@ -16,3 +16,10 @@ for i in range(1, 12):
       print(i == 10 and "X" or 0)
     else:
       print(i)
+"""
+Difficulty: D
+Not too bad, first, you need to calculate the total
+without the missing digit, then subtract it from the
+expected total, making sure to take into account the
+place value of each digit.
+"""
