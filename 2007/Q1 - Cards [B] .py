@@ -1,7 +1,7 @@
 cards = [int(x) for x in input("Enter cards: ").split()]
 points = 0
 
-def combinations(n, lb):
+def combinations(n, lb=0):
   if n != 0:
     for i in range(lb, len(cards)):
       buffer[n - 1] = cards[i]
@@ -12,7 +12,7 @@ def combinations(n, lb):
 
 for i in range(2, 6):
   comb, buffer = [], [0] * i
-  combinations(i, 0)
+  combinations(i)
   for c in comb:
     if sum(c) == 15 or (i == 2 and c[0] == c[1]):
       points += 1
