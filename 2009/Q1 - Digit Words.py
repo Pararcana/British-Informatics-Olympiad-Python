@@ -1,12 +1,11 @@
 digitWords = ["ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN"]
-
 word = input("Enter a word: ").upper()
 
 for digit in digitWords:
   wordFilter = [v for v in word if v in digit]
-
   order = []
   counter = 0
+  
   for v in digit:
     try:
       first = wordFilter.index(v)
