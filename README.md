@@ -33,7 +33,7 @@ All Q1s are done, and you can find the code in the repo. I am currently in the p
 |2008|**D**|❌|❌|
 |2009|**C**|❌|❌|
 |2010|**E**|❌|❌|
-|2011|✅|❌|❌|
+|2011|**E**|❌|❌|
 |2012|✅|❌|❌|
 |2013|✅|❌|❌|
 |2014|✅|❌|❌|
