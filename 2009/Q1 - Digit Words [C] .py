@@ -19,3 +19,11 @@ for digit in digitWords:
     print(digitWords.index(digit) + 1)
     exit()
 print("NO")
+"""
+Difficulty: C
+The key to this question, is that you need to check the order in which each letter of each
+digit appears in the word. The index() and remove() methods only affect the first instance
+of the item specified in the list, so it might be a good idea to use them in your code.
+Remember that after each letter you use in the word, all letters to the left of it become
+unavailable, as the order would not be contiguous.
+"""
