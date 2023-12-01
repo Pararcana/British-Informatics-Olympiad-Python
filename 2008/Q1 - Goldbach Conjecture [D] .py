@@ -16,3 +16,9 @@ for i in range(len(primes)):
     if primes[i] + primes[j] == target:
       counter += 1
 print(counter)
+"""
+Difficulty: D
+You can split this problem into two parts: generating the primes;
+and using a nested for loop to count the number of different ways
+the target number can be achieved. All in all, not too hard.
+"""
