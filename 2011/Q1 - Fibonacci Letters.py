@@ -8,3 +8,8 @@ for _ in range(int(index) - 2):
   fib.append(newEntry > 26 and newEntry - 26 or newEntry)
 
 print(chr(fib[int(index) - 1] + 64))
+"""
+Difficulty: D
+Not too bad, you just need to create a list using fibonacci rules with the 2 starting
+letters' indexes in the alphabet.
+"""
