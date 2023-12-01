@@ -16,5 +16,7 @@ while True:
   k += sum([int(x) for x in str(k)])
 """
 Difficulty: E
-
+This problem can be split into two parts: generating the rivers
+and finding where they meet, which involves searching each river
+and incrementing 'k' if necessary.
 """
