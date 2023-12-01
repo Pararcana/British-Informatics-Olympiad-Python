@@ -1,14 +1,9 @@
-primes = [2]
 target = int(input("Enter a number: "))
 counter = 0
 
-for i in range(3, target + 1, 2):
-  prime = True
-  for j in range(2, int(i**(1/2)) + 1):
-    if i % j == 0:
-      prime = False
-      break
-  if prime:
+primes = [2]
+for i in range(3, target, 2):
+  if all([i % j != 0 for j in range(2, i)]):
     primes.append(i)
 
 for i in range(len(primes)):
