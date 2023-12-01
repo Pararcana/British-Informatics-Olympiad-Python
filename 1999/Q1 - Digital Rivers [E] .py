@@ -1,25 +1,20 @@
-river1, river3, river9 = [1], [3], [9]
+rivers = [[1], [3], [9]]
 
-def gen_rivers(river):
+for river in rivers:
   while river[-1] < 25000:
     sumDigits = sum([int(x) for x in str(river[-1])])
     river.append(river[-1] + sumDigits)
 
-gen_rivers(river1)
-gen_rivers(river3)
-gen_rivers(river9)
-
 k = int(input("Enter a river: "))
+nums = [1, 3, 9]
 
 while True:
-  if k in river1:
-    print("Meets river 1 at " + str(k))
-    break
-  elif k in river3:
-    print("Meets river 3 at " + str(k))
-    break
-  elif k in river9:
-    print("Meets river 9 at " + str(k))
-    break
+  for i, river in enumerate(rivers):
+    if k in river:
+      print(f"Meets river {nums[i]} at {k}.")
+      exit()
   k += sum([int(x) for x in str(k)])
-"
+"""
+Difficulty: E
+
+"""
