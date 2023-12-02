@@ -17,3 +17,9 @@ strs.append(strs[0] + strs[1])
 
 for v in strs:
   print(isPat(v) and "YES" or "NO")
+"""
+Difficulty: B
+This was also pretty hard for a Q1, and requires the use of recursion to check if
+a number is a number is a pat or not. The individual rules to apply aren't too hard,
+however.
+"""
