@@ -16,7 +16,7 @@ lowest = min([v for v in lucky if v > num])
 
 print(highest, lowest)
 """
-Difficulty: D
+Difficulty: E
 Again, the only challenge is generating the list of lucky numbers.
 Finding the closest higher and lower number than the target is easy.
 """
