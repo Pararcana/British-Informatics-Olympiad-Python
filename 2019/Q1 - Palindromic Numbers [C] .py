@@ -13,3 +13,9 @@ else:
     sNum = str(num)
     num = makePalindrome(str(int(sNum[0:(len(sNum)+1)//2])+1) + sNum[(len(sNum)+1)//2:])
   print(num)
+"""
+Difficulty: C
+The range of inputs is to great to bruteforce a solution, so you need to be smart and
+only check the palindromes, which you might find hard to do. I'd recommend that you
+split the palindromes that you check into odd and even.
+"""
