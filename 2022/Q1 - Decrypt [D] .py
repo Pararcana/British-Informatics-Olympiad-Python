@@ -17,3 +17,10 @@ oriString.reverse()
 decrypt = "".join(oriString)
 
 print(decrypt)
+"""
+Difficulty: D
+Not too bad, you just need to reverse the process they provide
+to get the decryption algorithm, and impliment it. This involves
+subtracting the left letters from the right ones to get the 
+decrypted letter.
+"""
