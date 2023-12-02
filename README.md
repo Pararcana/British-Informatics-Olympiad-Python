@@ -35,7 +35,7 @@ All Q1s are done, and you can find the code in the repo. I am currently in the p
 |2010|**E**|❌|❌|
 |2011|**E**|❌|❌|
 |2012|**D**|❌|❌|
-|2013|✅|❌|❌|
+|2013|**E**|❌|❌|
 |2014|✅|❌|❌|
 |2015|**A**|❌|❌|
 |2016|✅|❌|❌|
