@@ -43,6 +43,6 @@ All Q1s are done, and you can find the code in the repo. I am currently in the p
 |2018|**D**|**C**|**C**|
 |2019|**C**|❌|❌|
 |2020|**C**|❌|❌|
-|2021|✅|❌|❌|
-|2022|✅|❌|❌|
+|2021|**B**|❌|❌|
+|2022|**D**|❌|❌|
 |2023|**E**|❌|❌|
