@@ -15,7 +15,8 @@ highest = max([v for v in lucky if v < num])
 lowest = min([v for v in lucky if v > num])
 
 print(highest, lowest)
-
-# for _ in range(168):
-#   lucky = [v for v in lucky if (lucky.index(v) + 1) % n != 0]
-#   n = lucky[lucky.index(n) + 1]
+"""
+Difficulty: D
+Again, the only challenge is generating the list of lucky numbers.
+Finding the closest higher and lower number than the target is easy.
+"""
