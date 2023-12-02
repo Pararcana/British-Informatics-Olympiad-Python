@@ -10,3 +10,8 @@ for dir in promenade:
     right = [left[0]+right[0], left[1]+right[1]]
 
 print(left[0] + right[0], "/", left[1] + right[1])
+"""
+Difficulty: E
+The only challenge is understanding the question. Implementing
+the solution is formulaic and simple.
+"""
