@@ -12,3 +12,9 @@ for v in primes:
   if target % v == 0:
     counter *= v
 print(counter)
+"""
+Difficulty: D
+Once again, you can split this problem into two parts: prime
+generation, and multiplying them together if they are a factor
+of the target. Numpy's prod() function may be useful for this.
+"""
