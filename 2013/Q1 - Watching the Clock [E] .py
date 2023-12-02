@@ -10,3 +10,7 @@ while minutesToHours(a) != minutesToHours(b):
 
 hours, minutes = minutesToHours(a)
 print("{:02d}".format(hours)+":"+"{:02d}".format(minutes))
+"""
+Difficulty: E
+Not too bad at all, simply increment both clocks until the time matches.
+"""
