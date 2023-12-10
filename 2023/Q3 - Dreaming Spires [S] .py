@@ -1,30 +1,35 @@
 start = input("Enter the initial state: ").split()
 end = input("Enter the end state: ").split()
-
 start = [list(v) if v[0] != "0" else [] for v in start]
 end = [list(v) if v[0] != "0" else [] for v in end]
+
+def format(arr, end):
+  arr = [v.copy() for v in arr]
+  end = [v.copy() for v in end]
+  for i in range(4):
+    while len(arr[i]) != len(end[i]):
+      if len(arr[i]) > len(end[i]):
+        end[i].append("0")
+      else:
+        arr[i].append("0")
+  return arr, end
+
+def findBases(arr, goal):
+  base = []
+  for i in range(4):
+    for j in range(len(arr[i])):
+      if arr[i][j] != goal[i][j] and goal[i][j] != "0":
+        base.append(goal[i][j])
+        break
+  return base
 
 def fitness(arr):
   global end
   total = 0
-  testArr = [v.copy() for v in arr]
-  goal = [v.copy() for v in end]
-  for i in range(4):
-    while len(testArr[i]) != len(goal[i]):
-      if len(testArr[i]) > len(goal[i]):
-        goal[i].append("0")
-      else:
-        testArr[i].append("0")
+  testArr, goal = format(arr, end)
+  base = findBases(testArr, goal)
 
-  base = []
   for i in range(4):
-    order = True
-    for j in range(len(testArr[i])):
-      if testArr[i][j] != goal[i][j] and goal[i][j] != "0":
-        base.append(goal[i][j])
-        break
-
-  for i in range(4): # Fitness function
     order = True
     for j in range(len(testArr[i])):
       if testArr[i][j] == goal[i][j] and order:
@@ -57,5 +62,4 @@ counter = 0
 while start != end:
   step()
   counter += 1
-
 print(counter)
