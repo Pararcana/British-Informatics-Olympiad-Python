@@ -63,3 +63,16 @@ while start != end:
   step()
   counter += 1
 print(counter)
+"""
+Difficulty: S
+The maximum number of permutations in each step is 12. This
+means that you can search each individual move in a position,
+which I evaluate with my fitness function and pick the best 
+one. Repeat until you reach the desired position.
+
+For my fitness function, I add points if the balls are in their
+correct positions, deduct points if other balls are stacked on
+top of a "important" ball (one that needs to be at the bottom of
+a stack before the rest can be added on top) and incentivise 
+stacking low.
+"""
