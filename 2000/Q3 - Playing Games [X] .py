@@ -68,3 +68,20 @@ def step(testDie, n=1):
 for v in pairs(None, target=small):
   step(v)
 print("Impossible")
+"""
+Difficulty: X
+There are probably multiple methods to do this, but the one
+I went with involved a pruned bruteforce, as to not make each
+test obnoxiously long. 
+
+The pruning algorithm involves appending a number to each test 
+die and checking if the test sample space is a subset of the 
+inputted dice's sample space (via the 'softCheck' function). If 
+it isn't, we can prune that branch, as it will never be a solution, 
+no matter the continuation.
+
+To generate each die, I used my 'pairs' function, which would
+generate some pruned numbers to bruteforce. Finally, I used a 
+recursive algorithm to create the dice that would be verified 
+by the checking algorithm.
+"""
