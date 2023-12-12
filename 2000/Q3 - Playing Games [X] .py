@@ -1,7 +1,10 @@
-die1 = [sorted([int(x) for x in input("Dice 1: ").split()]), sorted([int(x) for x in input("Dice 2: ").split()])]
+sides = int(input("Enter the number of sides: "))
+dieA = sorted([int(x) for x in input("Dice 1: ").split()])
+dieB = sorted([int(x) for x in input("Dice 2: ").split()])
+
+die1 = [dieA, dieB]
 dicePerms = sorted([i + j for i in die1[0] for j in die1[1]])
 diceCount = [dicePerms.count(v) for v in range(2, 17)]
-sides = len(die1[0])
 small, big = min(dicePerms), max(dicePerms)
 
 def check(arr):
@@ -22,7 +25,7 @@ def softCheck(arr):
 def prune(arr):
   arr[0].append(0)
   prune = []
-  for i in range(arr[0][-1], 11):
+  for i in range(arr[0][-1], big):
     arr[0][-1] = i
     if softCheck(arr):
       prune.append(i)
@@ -30,8 +33,8 @@ def prune(arr):
 
 def pairs(arr, target=None):
   if target:
-    for i in range(1, 11):
-      for j in range(i, 11):
+    for i in range(1, big):
+      for j in range(i, big):
         if i+j == target:
           yield [[i], [j]]
   else:
@@ -43,9 +46,9 @@ def pairs(arr, target=None):
     arr[0].pop(-1)
     arr.reverse()
 
-    for i in range(arr[0][-1], 11):
+    for i in range(arr[0][-1], big):
       if i in x:
-        for j in range(arr[1][-1], 11):
+        for j in range(arr[1][-1], big):
           if j in y and small <= i + j <= big:
             yield (i, j)
 
@@ -56,7 +59,6 @@ def step(testDie, n=1):
   else:
     for v in pairs(testDie):
       for i in range(2):
-        
         while len(testDie[i]) > n:
           testDie[i].pop(-1)
         testDie[i].append(v[i])
@@ -65,5 +67,4 @@ def step(testDie, n=1):
 
 for v in pairs(None, target=small):
   step(v)
-  
 print("Impossible")
