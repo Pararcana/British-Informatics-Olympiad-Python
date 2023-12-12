@@ -31,7 +31,7 @@ def prune(arr):
       prune.append(i)
   return prune
 
-def pairs(arr, target=None):
+def pairs(arr=[], target=None):
   if target:
     for i in range(1, big):
       for j in range(i, big):
@@ -55,17 +55,17 @@ def pairs(arr, target=None):
 def step(testDie, n=1):
   if n == sides:
     check(testDie)
-    
+
   else:
     for v in pairs(testDie):
       for i in range(2):
         while len(testDie[i]) > n:
           testDie[i].pop(-1)
         testDie[i].append(v[i])
-        
+
       step(testDie, n + 1)
 
-for v in pairs(None, target=small):
+for v in pairs(target=small):
   step(v)
 print("Impossible")
 """
