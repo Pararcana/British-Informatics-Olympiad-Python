@@ -23,7 +23,7 @@ All Q1s are done, and you can find the code in the repo. I am currently in the p
 |1998|**D**|❌|❌|
 |1999|**E**|❌|❌|
 |2000|**E**|**B**|**X**|
-|2001|**D**|❌|❌|
+|2001|**D**|**A**|❌|
 |2002|**E**|❌|❌|
 |2003|**D**|❌|❌|
 |2004|**D**|❌|**S**|
