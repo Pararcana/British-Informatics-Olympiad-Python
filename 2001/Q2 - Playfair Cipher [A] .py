@@ -2,7 +2,7 @@ def genKey(word, reverse=False):
   alpha = list("ABCDEFGHIJKLMNOPRSTUVWXYZ")
   word = list(dict.fromkeys(word).keys())
   word += filter(lambda x: x not in word, alpha)
-  return list(word[::-1]) if reverse else word
+  return word[::-1] if reverse else word
 
 def findPos(arr, value):
   index = arr.index(value)
