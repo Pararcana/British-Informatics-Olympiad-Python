@@ -10,7 +10,7 @@ BIO 2000 Q3 is a mess (partial marks due to time constraints), and I am currentl
 
 Any issues or questions with the code, such as if you want me to explain any methods I used or how the code works, can be put into the issues tab. I will try to answer them to the best of my ability. I am not looking for solutions by anyone else, as I intend for this repository to only include my solutions. Please do not be offended if I reject a pull request.
 
-All Q1s are done, and you can find the code in the repo. I am aiming for two questions solved per week.
+All Q1s are done, and you can find the code in the repo. I am aiming to solve two questions per week from now.
 
 **The difficulties (from hardest to easiest) are: X, S, A, B, C, D, E, F. You can find which solutions I have in the table below:**
 **If I have them, there will be either be a tick, or a letter representing the difficulty.**
