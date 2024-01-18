@@ -4,50 +4,35 @@ def genKey(word, reverse=False):
   word += filter(lambda x: x not in word, alpha)
   return word[::-1] if reverse else word
 
-def findPos(arr, value):
-  index = arr.index(value)
-  row = index // 5
-  column = index % 5
-  return row, column
-
-def findChar(arr, row, column):
-  return arr[row * 5 + column]
-
 def playfair(text, mode):
   ans = []
-  
   for bigram in text:
-    r1, c1 = findPos(grid1, bigram[0])
-    r2, c2 = findPos(grid2, bigram[1])
+    r1, c1 = divmod(grid1.index(bigram[0]), 5)
+    r2, c2 = divmod(grid2.index(bigram[1]), 5)
     if r1 == r2:
-      ans.append(findChar(grid1, r1, (c1+mode)%5))
-      ans.append(findChar(grid2, r2, (c2+mode)%5))
-    else:
-      ans.append(findChar(grid1, r2, c1))
-      ans.append(findChar(grid2, r1, c2))
-
+      c1 += mode
+      c2 += mode
+    ans.append(grid1[r2*5 + c1%5])
+    ans.append(grid2[r1*5 + c2%5])
   return ans[:-1] if mode == -1 and ans[-1] == "X" else ans
-  
+
 grid1 = genKey(input("Enter keyword 1: ").upper())
-grid2 = genKey(input("Enter keyword 2: ").upper(), True)
+grid2 = genKey(input("Enter keyword 2: ").upper(), reverse=True)
 
 for i in range(5):
   print(*grid1[i*5:(i+1)*5], "\t", *grid2[i*5:(i+1)*5])
 
-action = input("What do you want to do? ").upper()
-while action != "Q":
+while (action := input("What do you want to do? ").upper()) != "Q":
   if action == "E":
     text = input("Enter text to be encoded: ").upper()
     text = text if len(text) % 2 == 0 else text + "X"
     text = [text[i:i+2] for i in range(0, len(text), 2)]
     print("".join(playfair(text, 1)))
-    
+
   if action == "D":
     text = input("Enter text to be decoded: ").upper()
     text = [text[i:i+2] for i in range(0, len(text), 2)]
     print("".join(playfair(text, -1)))
-
-  action = input("What do you want to do? ").upper()
 
 """
 Difficulty: A
