@@ -1,53 +1,33 @@
-print("""Co-ordinates are from 1 - 11")
-Directions are T  = Top, B = Bottom, L = Left, R = Right
-Please use the format 'x y d' e.g. '1 1 T'\n""") 
-position1 = str(input("Input ant 1's co-ordinates and direction: ")).split(" ")
-position2 = str(input("Input ant 2's co-ordinates and direction: ")).split(" ")
-directions = ["T", "R", "B", "L"]
-
-def rotate(direction, rotation):
-  index = directions.index(direction) + rotation
-  if index >= 4:
-    index -= 4
-  return directions[index]
-  
 class Ant: 
-  def __init__(self, x, y, direction): 
-    self.x, self.y, self.direction = x, y, direction
-    
-  def move(self, x, y, direction):
-    if not(x <= 0 or x >= 12 or y <= 0 or y >= 12):
-      if direction == "R" or direction == "L":
-        x += direction == "R" and 1 or -1
-      elif direction == "T" or direction == "B":
-        y += direction == "T" and 1 or -1
-      if x <= 0 or x >= 12 or y <= 0 or y >= 12:
-        self.x = 99
+  def __init__(self, *coords): 
+    self.coords = int(coords[0]), int(coords[1]), coords[2]
+
+  def __str__(self):
+    return " ".join(str(v) for v in self.coords) if self.coords[0] else "Removed"
+
+  def move(self):
+    x, y, dir = self.coords
+    if 0 < x < 12 and 0 < y < 12:
+      incre = 1 if faces.index(dir) < 2 else -1
+      if faces.index(dir) % 2: x += incre 
+      else: y += incre
+        
+      if not(0 < x < 12 and 0 < y < 12): x, empty = 0, 0
       else:
-        empty = grid[-y + 11][x - 1] == "."
-        grid[-y + 11][x - 1] = empty and "*" or "."
-        self.direction = rotate(direction, empty and 1 or -1)
-        self.x, self.y = x, y
-            
-ant1 = Ant(position1[0], position1[1], position1[2])
-ant2 = Ant(position2[0], position2[1], position2[2])
+        empty = 1 if grid[-y + 11][x - 1] == "." else -1
+        grid[-y + 11][x - 1] = "*" if empty == 1 else "."
+      self.coords = x, y, faces[(faces.index(dir) + empty) % 4]
 
-grid = []
-for _ in range(11):
-  grid.append(["."]*11)
+position1 = input("Input ant 1's co-ordinates and direction: ").upper().split(" ")
+position2 = input("Input ant 2's co-ordinates and direction: ").upper().split(" ")
+ant1, ant2 = Ant(*position1), Ant(*position2)
+grid = [["."]*11 for _ in range(11)]
+faces = ["T", "R", "B", "L"]
 
-while True:
-    moves = int(input("\nInput the amount of moves you want to pass. "))
-    if moves == -1:
-        exit()
-    for _ in range(moves):
-        ant1.move(int(ant1.x), int(ant1.y), str(ant1.direction))
-        ant2.move(int(ant2.x), int(ant2.y), str(ant2.direction))
-    print("")
-    for v in grid:
-      print(" ".join(v))
-    print(ant1.x == 99 and "Removed" or " ".join([str(ant1.x), str(ant1.y), ant1.direction]))
-    print(ant2.x == 99 and "Removed" or " ".join([str(ant2.x), str(ant2.y), ant2.direction]))
+while (moves := int(input("\nNumber of moves: "))) != -1:
+  for _ in range(moves): ant1.move(); ant2.move()
+  for row in grid: print(*row)
+  print(ant1); print(ant2)
 """
 Difficulty: B
 This questions involves the use of classes, so you can define how both ants move according to
