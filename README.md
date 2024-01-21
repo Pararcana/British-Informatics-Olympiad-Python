@@ -18,7 +18,7 @@ All Q1s are done, and you can find the code in the repo. I am aiming to solve tw
 |1995|**B**|❌|❌|
 |1996|**E**|❌|❌|
 |1997|**D**|❌|❌|
-|1998|**D**|❌|❌|
+|1998|**D**|**B**|❌|
 |1999|**E**|❌|❌|
 |2000|**E**|**B**|**X**|
 |2001|**D**|**A**|❌|
