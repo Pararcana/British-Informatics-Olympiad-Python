@@ -8,10 +8,11 @@ class Ant:
   def move(self):
     if self.coords:
       x, y, dir = self.coords
-      if dir in ["R", "L"]:
-        x += 1 if dir == "R" else -1
-      else:
-        y += 1 if dir == "T" else -1
+      match dir:
+        case "R": x += 1
+        case "L": x -= 1
+        case "T": y += 1
+        case "B": y -= 1
 
       if not(0 < x < 12 and 0 < y < 12): 
         self.coords = False
@@ -38,8 +39,10 @@ while (moves := int(input("\nNumber of moves: "))) != -1:
 
 """
 Difficulty: B
-This questions involves the use of classes, so you can define how both ants move according to
+This question involves the use of classes, so you can define how both ants move according to
 the question. This isn't that hard to do, considering the ants have fairly simple rules. Another
 thing to remember is that you need to update the grid each turn. All in all, not too difficult,
 assuming you know how to create and use classes.
+
+Another similar question to this is 'Tamworth Two' - 1998 Q2. Try that if you wish.
 """
