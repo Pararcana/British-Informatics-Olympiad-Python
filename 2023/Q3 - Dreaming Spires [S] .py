@@ -74,5 +74,7 @@ For my fitness function, I add points if the balls are in their
 correct positions, deduct points if other balls are stacked on
 top of a "important" ball (one that needs to be at the bottom of
 a stack before the rest can be added on top) and incentivise 
-stacking low.
+stacking low. 
+
+These kind of algorithms are known as "greedy algorithms".
 """
