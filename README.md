@@ -25,7 +25,7 @@ Any issues or questions with the code, such as if you want me to explain any met
 |2004|**D**|❌|**S**|
 |2005|**D**|❌|❌|
 |2006|**F**|❌|❌|
-|2007|**B**|❌|❌|
+|2007|**B**|❌|**S**|
 |2008|**D**|❌|❌|
 |2009|**C**|❌|❌|
 |2010|**E**|❌|❌|
